@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Directory for final binaries
+BIN_DIR="bin"
+mkdir -p "${BIN_DIR}"
+
 # Chemin vers le fichier source et nom du binaire final
 DEPLOYMENT_TARGET="macosx12.0"
 ARCHS=("x86_64" "arm64")
@@ -38,12 +42,12 @@ for idx in "${!PROGRAM_NAMES[@]}"; do
     for ARCH in "${ARCHS[@]}"; do
         bins+=("${prog}_${ARCH}")
     done
-    lipo -create "${bins[@]}" -output "${prog}"
+    lipo -create "${bins[@]}" -output "${BIN_DIR}/${prog}"
 
     # Cleanup
     echo "🧹 Nettoyage des binaires intermédiaires pour ${prog}..."
     for ARCH in "${ARCHS[@]}"; do
         rm "${prog}_${ARCH}"
     done
-    echo "✅ Terminé : ${prog}"
+    echo "✅ Terminé : ${BIN_DIR}/${prog}"
 done
