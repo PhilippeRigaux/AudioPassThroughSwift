@@ -10,7 +10,7 @@ DEPLOYMENT_TARGET="macosx12.0"
 ARCHS=("x86_64" "arm64")
 
 # Programs to build
-PROGRAM_NAMES=("AudioPassThroughUniversal" "create-agg" "create-multi")
+PROGRAM_NAMES=("AudioPassThrough" "create-agg" "create-multi")
 PROGRAM_SRCS=("src/AudioPassThrough.swift" "src/create-agg.swift" "src/create_multi.swift")
 PROGRAM_FRAMEWORKS=("" "-framework CoreAudio" "-framework CoreAudio")
 
