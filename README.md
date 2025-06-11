@@ -65,6 +65,35 @@ Displays usage and lists available **Aggregate Devices** on the system.
   DEBUG=true ./AudioPassThroughUniversal "MyAggregate" 12 34
   ```
 
+## Additional CLI Tools
+
+### create-agg
+
+A command-line utility to create an Aggregate Audio Device from two existing devices.
+
+**Usage:**
+```bash
+./create-agg <AggDeviceName> <InputDeviceName> <OutputDeviceName>
+```
+- `<AggDeviceName>`: Desired name for the new aggregate device.
+- `<InputDeviceName>`: Display name of the device to use as the master (input) device.
+- `<OutputDeviceName>`: Display name of the device to include as the second device.
+
+After running, the new aggregate device will be created and ready to use.
+
+### create-multi
+
+A command-line utility to create a Multi-Output Audio Device (Stacked) from two or more existing devices.
+
+**Usage:**
+```bash
+./create-multi <MultiDeviceName> <OutputDevice1> [OutputDevice2] [...]
+```
+- `<MultiDeviceName>`: Desired name for the new multi-output device.
+- `<OutputDevice1>`, `<OutputDevice2>`, …: Display names of the devices to combine.
+
+After running, the new multi-output device will be created and visible in Audio MIDI Setup as a stacked (multi-output) device.
+
 ## Aggregate Device Setup
 
 1. Open **Audio MIDI Setup** (macOS Utilities folder).
