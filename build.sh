@@ -10,9 +10,9 @@ DEPLOYMENT_TARGET="macosx12.0"
 ARCHS=("x86_64" "arm64")
 
 # Programs to build
-PROGRAM_NAMES=("AudioPassThrough" "create-agg" "create-multi")
-PROGRAM_SRCS=("src/AudioPassThrough.swift" "src/create-agg.swift" "src/create_multi.swift")
-PROGRAM_FRAMEWORKS=("" "-framework CoreAudio" "-framework CoreAudio")
+PROGRAM_NAMES=("AudioPassThrough" "create-agg" "create-multi" "createVirtDev")
+PROGRAM_SRCS=("src/AudioPassThrough.swift" "src/create-agg.swift" "src/create_multi.swift" "src/createVirtDev.swift")
+PROGRAM_FRAMEWORKS=("" "-framework CoreAudio" "-framework CoreAudio" "-framework CoreAudio")
 
 # Nettoyer d’anciens binaires intermédiaires si présents
 for ARCH in "${ARCHS[@]}"; do
